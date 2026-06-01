@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    hikari:
+      driver-class-name: "org.postgresql.Driver"
+      connection-timeout: 20000
+      maximum-pool-size: 5
+      minimum-idle: 2
+      idle-timeout: 300000
+      keepalive-time: 60000
+      initialization-fail-timeout: 60000
+      connection-test-query: "SELECT 1+1"
+
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+  flyway:
+    enabled: false
+
+kind: Application
