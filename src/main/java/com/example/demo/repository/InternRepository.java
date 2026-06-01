@@ -8,5 +8,4 @@ import java.util.List;
 
 @Repository
 public interface InternRepository extends JpaRepository<Intern, Integer> {
-    List<Intern> findByManagerId(int managerId);
 }
