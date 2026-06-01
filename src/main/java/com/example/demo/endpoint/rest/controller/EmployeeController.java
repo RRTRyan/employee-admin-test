@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/employees")
-@CrossOrigin(origins = "*", exposedHeaders = "Content-Range")
+@CrossOrigin(origins = "*", exposedHeaders = "X-Total-Count")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
@@ -40,8 +40,7 @@ public class EmployeeController {
         Page<Employee> resultPage = employeeService.getAll(page, size, sort, order, filterJson);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Range", "employees " + start + "-" + (start + resultPage.getNumberOfElements() - 1) + "/" + resultPage.getTotalElements());
-
+        headers.add("X-Total-Count", String.valueOf(resultPage.getTotalElements()));
         return ResponseEntity.ok().headers(headers).body(resultPage.getContent());
     }
 
