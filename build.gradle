@@ -150,9 +150,9 @@ dependencies {
     testImplementation 'org.testcontainers:testcontainers-junit-jupiter:2.0.2'
     testImplementation 'org.junit-pioneer:junit-pioneer:2.2.0'
 
-org.springframework.boot:spring-boot-starter-data-jpa
-org.postgresql:postgresql
-io.github.cdimascio:java-dotenv:5.2.2
+implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+implementation 'org.postgresql:postgresql'
+implementation 'io.github.cdimascio:java-dotenv:5.2.2'
 
 
 }
